@@ -1,0 +1,330 @@
+/* CSS Variables for Premium Theme */
+:root {
+    --dark-green: #0a1a1a;
+    --gold: #D4AF37;
+    --light-gold: #f0e6d2;
+    --off-white: #f5f5f5;
+    --text-color: #c5c5c5;
+    --font-main: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-main);
+    line-height: 1.8;
+    color: var(--text-color);
+    background: radial-gradient(circle at top left, #1a3a3a, var(--dark-green));
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--gold);
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    /* Responsive font size: min 2.2rem, preferred 4vw, max 3rem */
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 50px;
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header */
+.header {
+    background-color: rgba(10, 26, 26, 0.65); /* Increased transparency */
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.logo img {
+    height: 80px;
+}
+
+.logo span {
+    font-size: 1.8rem;
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: var(--off-white);
+    margin-left: 15px;
+}
+
+.navigation a {
+    color: var(--off-white);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--gold);
+    transition: width 0.3s;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+/* Language Switcher */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.lang-switcher {
+    margin-left: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--off-white);
+    font-family: var(--font-main);
+    font-weight: 700;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.lang-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn.active {
+    background-color: var(--gold);
+    color: var(--dark-green);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(10, 26, 26, 0.7), rgba(10, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac166245?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    color: var(--off-white);
+    text-align: center;
+    padding: 60px 0 80px; /* Further reduced top padding */
+    min-height: 70vh; /* Adjusted min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    /* Responsive font size: min 2.5rem, preferred 5vw, max 4.5rem */
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--off-white);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px; /* Reduced space */
+}
+
+.hero .mission {
+    /* Responsive font size: min 1rem, preferred 2.5vw, max 1.3rem */
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    max-width: 750px;
+    margin: 10px auto 40px; /* Reduced top margin */
+    line-height: 1.9;
+}
+
+/* Call to Action Button */
+.cta-button {
+    background: linear-gradient(45deg, var(--gold), #b89b3c);
+    color: var(--dark-green);
+    padding: 18px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Card-based sections */
+.about, .services, .why-us, .contacts {
+    background-color: transparent;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Why Us Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon svg {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Services Section */
+.service-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.service-column {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.service-column h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.service-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-column ul li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.service-column ul li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+    top: 5px;
+}
+
+.contact-info a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    font-family: var(--font-main);
+    background-color: rgba(10, 26, 26, 0.5);
+    color: var(--off-white);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-green);
+    color: var(--text-color);
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer a {
+    color: var(--gold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    .service-columns { grid-template-columns: 1fr; }
+    .navigation { display: none; } /* Simple solution for mobile, can be improved with a burger menu */
+}
