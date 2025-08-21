@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konsultant Me - Юридические услуги в Черногории</title>
+    <title>Konsultant.Me - Юридические услуги в Черногории</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
             <div class="header-content">
                 <a href="#" class="logo">
                     <img src="assets/Logo1.jpg" alt="Konsultant Me Logo">
-                    <span data-key="companyName">Konsultant Me</span>
+                    <span data-key="companyName">Konsultant.Me</span>
                 </a>
                 <div class="nav-wrapper">
                     <nav class="navigation">
@@ -45,7 +45,8 @@
             <div class="container">
                 <h1 data-key="hero_title">Ваш эксперт по юридическим вопросам в Черногории</h1>
                 <p class="mission" data-key="hero_mission">Мы верим: не бывает безвыходных ситуаций. Даже когда всё кажется невозможным — мы находим решение, опираясь на опыт, стратегию и знание закона. Просто доверьтесь нам.</p>
-                <a href="#contacts" class="cta-button" data-key="hero_button">Получить консультацию</a>
+                <p class="pre-cta-text" data-key="hero_pre_cta">Мы работаем строго по предварительной записи и приглашаем Вас на личную консультацию.</p>
+                <button type="button" class="cta-button" id="open-calendar-btn" data-key="hero_button">Получить консультацию</button>
             </div>
         </section>
 
@@ -177,6 +178,18 @@
     </script>
     <script src="translations.js"></script>
     <script src="app.js"></script>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="modal-close-btn" aria-label="Close">&times;</button>
+            <h3 data-key="modal_title">Запись на консультацию</h3>
+            <div class="calendar-placeholder">
+                <p data-key="modal_instruction_1">Здесь будет размещен календарь для записи.</p>
+                <p data-key="modal_instruction_2"><strong>Инструкция:</strong> Зарегистрируйтесь на сайте <a href="https://calendly.com/" target="_blank">Calendly</a>, создайте событие и вставьте сюда полученный код для встраивания (inline embed code).</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

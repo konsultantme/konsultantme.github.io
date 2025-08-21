@@ -1,13 +1,14 @@
 const translations = {
     ru: {
         toggle_nav: "Переключить навигацию",
-        companyName: "Konsultant Me",
+        companyName: "Konsultant.Me",
         nav_about: "О нас",
         nav_why_us: "Почему мы",
         nav_services: "Услуги",
         nav_contacts: "Контакты",
         hero_title: "Ваш эксперт по юридическим вопросам в Черногории",
         hero_mission: "Мы верим: не бывает безвыходных ситуаций. Даже когда всё кажется невозможным — мы находим решение, опираясь на опыт, стратегию и знание закона. Просто доверьтесь нам.",
+        hero_pre_cta: "Мы работаем строго по предварительной записи и приглашаем Вас на личную консультацию.",
         hero_button: "Получить консультацию",
         about_title: "О нас",
         about_p1: " — ваш юридический партнёр, если вы инвестируете с умом и действуете на перспективу.",
@@ -55,18 +56,22 @@ const translations = {
         form_email_placeholder: "Ваш Email",
         form_message_placeholder: "Кратко опишите ваш вопрос",
         form_button: "Отправить",
-        footer_copyright: "© 2025 Konsultant Me. Все права защищены.",
-        footer_privacy: "Политика конфиденциальности"
+        footer_copyright: "© 2025 Konsultant.Me. Все права защищены.",
+        footer_privacy: "Политика конфиденциальности",
+        modal_title: "Запись на консультацию",
+        modal_instruction_1: "Здесь будет размещен календарь для записи.",
+        modal_instruction_2: "<strong>Инструкция:</strong> Зарегистрируйтесь на сайте <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, создайте событие и вставьте сюда полученный код для встраивания (inline embed code)."
     },
     en: {
         toggle_nav: "Toggle navigation",
-        companyName: "Konsultant Me",
+        companyName: "Konsultant.Me",
         nav_about: "About Us",
         nav_why_us: "Why Us",
         nav_services: "Services",
         nav_contacts: "Contacts",
         hero_title: "Your expert in legal matters in Montenegro",
         hero_mission: "We believe there are no hopeless situations. Even when everything seems impossible, we find a solution based on experience, strategy, and knowledge of the law. Just trust us.",
+        hero_pre_cta: "We work strictly by appointment and invite you for a personal consultation.",
         hero_button: "Get a consultation",
         about_title: "About Us",
         about_p1: " — your legal partner for smart investments and long-term planning.",
@@ -114,18 +119,22 @@ const translations = {
         form_email_placeholder: "Your Email",
         form_message_placeholder: "Briefly describe your question",
         form_button: "Send",
-        footer_copyright: "© 2025 Konsultant Me. All rights reserved.",
-        footer_privacy: "Privacy Policy"
+        footer_copyright: "© 2025 Konsultant.Me. All rights reserved.",
+        footer_privacy: "Privacy Policy",
+        modal_title: "Book a Consultation",
+        modal_instruction_1: "The booking calendar will be displayed here.",
+        modal_instruction_2: "<strong>Instructions:</strong> Sign up on <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, create an event, and paste the inline embed code here."
     },
     me: {
         toggle_nav: "Promijeni navigaciju",
-        companyName: "Konsultant Me",
+        companyName: "Konsultant.Me",
         nav_about: "O nama",
         nav_why_us: "Zašto mi",
         nav_services: "Usluge",
         nav_contacts: "Kontakt",
         hero_title: "Vaš stručnjak za pravna pitanja u Crnoj Gori",
         hero_mission: "Vjerujemo da nema beznadežnih situacija. Čak i kada se sve čini nemogućim, pronalazimo rješenje oslanjajući se na iskustvo, strategiju i poznavanje zakona. Samo nam vjerujte.",
+        hero_pre_cta: "Radimo strogo po dogovoru i pozivamo Vas na ličnu konsultaciju.",
         hero_button: "Zatražite konsultaciju",
         about_title: "O nama",
         about_p1: " — vaš pravni partner ako pametno investirate i djelujete dugoročno.",
@@ -173,7 +182,7 @@ const translations = {
         form_email_placeholder: "Vaš Email",
         form_message_placeholder: "Ukratko opišite vaše pitanje",
         form_button: "Pošalji",
-        footer_copyright: "© 2025 Konsultant Me. Sva prava zadržana.",
+        footer_copyright: "© 2025 Konsultant.Me. Sva prava zadržana.",
         footer_privacy: "Politika privatnosti"
     }
 };

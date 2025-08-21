@@ -184,7 +184,7 @@ section.visible {
 
 /* Call to Action Button */
 .cta-button {
-    background: linear-gradient(45deg, var(--gold), #b89b3c);
+    background: linear-gradient(45deg, var(--gold), #C9B254);
     color: var(--dark-green);
     padding: 18px 35px;
     border: none;
@@ -353,7 +353,7 @@ section.visible {
         transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
         opacity: 0;
         align-items: center;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .navigation.nav-open {
