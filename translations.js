@@ -1,5 +1,6 @@
 const translations = {
     ru: {
+        toggle_nav: "Переключить навигацию",
         companyName: "Konsultant Me",
         nav_about: "О нас",
         nav_why_us: "Почему мы",
@@ -58,6 +59,7 @@ const translations = {
         footer_privacy: "Политика конфиденциальности"
     },
     en: {
+        toggle_nav: "Toggle navigation",
         companyName: "Konsultant Me",
         nav_about: "About Us",
         nav_why_us: "Why Us",
@@ -116,6 +118,7 @@ const translations = {
         footer_privacy: "Privacy Policy"
     },
     me: {
+        toggle_nav: "Promijeni navigaciju",
         companyName: "Konsultant Me",
         nav_about: "O nama",
         nav_why_us: "Zašto mi",
