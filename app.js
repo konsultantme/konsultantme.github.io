@@ -112,4 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load saved language or default to 'ru'
     const savedLang = localStorage.getItem('language') || 'ru';
     setLanguage(savedLang);
+
+    // Scroll to top button logic
+    const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            // Show button if scrolled more than half the viewport height
+            if (window.pageYOffset > window.innerHeight * 0.5) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
