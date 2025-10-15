@@ -88,6 +88,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Handle scroll to contacts on hero button click
+    const heroButton = document.getElementById('open-calendar-btn');
+    if (heroButton) {
+        heroButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetElement = document.getElementById('contacts');
+            
+            if (targetElement) {
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - (headerHeight * 0.8);
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
     // Load saved language or default to 'ru'
     const savedLang = localStorage.getItem('language') || 'ru';
     setLanguage(savedLang);
