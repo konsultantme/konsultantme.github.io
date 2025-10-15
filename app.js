@@ -58,7 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close navigation when a link is clicked (for smooth scrolling)
     navigation.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+            const href = link.getAttribute('href');
+            // Ensure it's an internal anchor link
+            if (href.startsWith('#')) {
+                event.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const header = document.querySelector('.header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    // Use getBoundingClientRect for consistent positioning
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - (headerHeight * 0.8);
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // For mobile, close the navigation menu after clicking a link
             if (navigation.classList.contains('nav-open')) {
                 navigation.classList.remove('nav-open');
                 burgerMenu.classList.remove('active');
