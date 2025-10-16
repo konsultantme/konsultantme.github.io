@@ -62,7 +62,9 @@ const translations = {
         footer_privacy: "Политика конфиденциальности",
         modal_title: "Запись на консультацию",
         modal_instruction_1: "Здесь будет размещен календарь для записи.",
-        modal_instruction_2: "<strong>Инструкция:</strong> Зарегистрируйтесь на сайте <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, создайте событие и вставьте сюда полученный код для встраивания (inline embed code)."
+        modal_instruction_2: "<strong>Инструкция:</strong> Зарегистрируйтесь на сайте <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, создайте событие и вставьте сюда полученный код для встраивания (inline embed code).",
+        privacy_page_title: "Политика конфиденциальности - Konsultant.Me",
+        privacy_title: "Политика конфиденциальности"
     },
     en: {
         toggle_nav: "Toggle navigation",
@@ -127,7 +129,9 @@ const translations = {
         footer_privacy: "Privacy Policy",
         modal_title: "Book a Consultation",
         modal_instruction_1: "The booking calendar will be displayed here.",
-        modal_instruction_2: "<strong>Instructions:</strong> Sign up on <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, create an event, and paste the inline embed code here."
+        modal_instruction_2: "<strong>Instructions:</strong> Sign up on <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, create an event, and paste the inline embed code here.",
+        privacy_page_title: "Privacy Policy - Konsultant.Me",
+        privacy_title: "Privacy Policy"
     },
     me: {
         toggle_nav: "Promijeni navigaciju",
@@ -189,6 +193,8 @@ const translations = {
         form_message_placeholder: "Ukratko opišite vaše pitanje",
         form_button: "Pošalji",
         footer_copyright: "© 2025 Konsultant.Me. Sva prava zadržana.",
-        footer_privacy: "Politika privatnosti"
+        footer_privacy: "Politika privatnosti",
+        privacy_page_title: "Politika privatnosti - Konsultant.Me",
+        privacy_title: "Politika privatnosti"
     }
 };

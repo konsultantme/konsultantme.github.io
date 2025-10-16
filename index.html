@@ -155,13 +155,14 @@
                     <p><strong data-key="contacts_phone">Телефон:</strong> <a href="tel:+38269264727">+382 69 264 727</a></p>
                     <p><strong>Email:</strong> <a href="mailto:t.raskopina@gmail.com">t.raskopina@gmail.com</a></p>
                 </div>
-                <form class="contact-form">
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/mwprylqk" method="POST">
                     <h3 data-key="form_title">Оставить заявку</h3>
                     <input type="text" name="name" placeholder="Ваше имя" required data-key-placeholder="form_name_placeholder">
                     <input type="email" name="email" placeholder="Ваш Email" required data-key-placeholder="form_email_placeholder">
                     <textarea name="message" placeholder="Кратко опишите ваш вопрос" rows="4" required data-key-placeholder="form_message_placeholder"></textarea>
                     <button type="submit" class="cta-button" data-key="form_button">Отправить</button>
                 </form>
+                <p id="form-status"></p>
             </div>
         </section>
     </main>
@@ -169,7 +170,7 @@
     <footer class="footer">
         <div class="container">
             <p data-key="footer_copyright">&copy; 2025 Konsultant Me. Все права защищены.</p>
-            <p><a href="#" data-key="footer_privacy">Политика конфиденциальности</a></p>
+            <p><a href="privacy.html" data-key="footer_privacy">Политика конфиденциальности</a></p>
         </div>
     </footer>
 

@@ -41,6 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save language to local storage
         localStorage.setItem('language', lang);
+
+        // Handle privacy policy content switching
+        const privacyContents = document.querySelectorAll('.privacy-content');
+        if (privacyContents.length > 0) {
+            privacyContents.forEach(content => {
+                if (content.getAttribute('lang') === lang) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        }
     };
 
     langButtons.forEach(button => {
@@ -129,6 +141,46 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+    }
+
+    // Handle Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(contactForm);
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    formStatus.textContent = 'Спасибо за ваше сообщение! Мы скоро с вами свяжемся.';
+                    formStatus.style.color = 'var(--gold)';
+                    contactForm.reset();
+                    setTimeout(() => {
+                        formStatus.textContent = '';
+                    }, 5000);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formStatus.textContent = 'Что-то пошло не так. Пожалуйста, попробуйте еще раз.';
+                        }
+                        formStatus.style.color = '#ff6b6b';
+                    })
+                }
+            }).catch(error => {
+                formStatus.textContent = 'Что-то пошло не так. Пожалуйста, попробуйте еще раз.';
+                formStatus.style.color = '#ff6b6b';
             });
         });
     }
