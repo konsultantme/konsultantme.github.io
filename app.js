@@ -178,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(contactForm);
+            const currentLang = localStorage.getItem('language') || 'ru';
             
             fetch(contactForm.action, {
                 method: 'POST',
@@ -187,18 +188,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }).then(response => {
                 if (response.ok) {
-                    showStatusModal('Спасибо за ваше сообщение! Мы скоро с вами свяжемся.');
+                    showStatusModal(translations[currentLang].form_success_message);
                     contactForm.reset();
                 } else {
                     response.json().then(data => {
-                        const errorMessage = data.errors ? data.errors.map(e => e.message).join(', ') : 'Что-то пошло не так. Пожалуйста, попробуйте еще раз.';
+                        const errorMessage = data.errors ? data.errors.map(e => e.message).join(', ') : translations[currentLang].form_error_generic;
                         showStatusModal(errorMessage, true);
                     }).catch(() => {
-                        showStatusModal('Что-то пошло не так. Пожалуйста, проверьте ваше интернет-соединение.', true);
+                        showStatusModal(translations[currentLang].form_error_generic, true);
                     });
                 }
             }).catch(error => {
-                showStatusModal('Ошибка сети. Пожалуйста, попробуйте еще раз.', true);
+                showStatusModal(translations[currentLang].form_error_network, true);
             });
         });
     }

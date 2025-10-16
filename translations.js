@@ -64,7 +64,10 @@ const translations = {
         modal_instruction_1: "Здесь будет размещен календарь для записи.",
         modal_instruction_2: "<strong>Инструкция:</strong> Зарегистрируйтесь на сайте <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, создайте событие и вставьте сюда полученный код для встраивания (inline embed code).",
         privacy_page_title: "Политика конфиденциальности - Konsultant.Me",
-        privacy_title: "Политика конфиденциальности"
+        privacy_title: "Политика конфиденциальности",
+        form_success_message: "Спасибо за ваше сообщение! Мы скоро с вами свяжемся.",
+        form_error_generic: "Что-то пошло не так. Пожалуйста, попробуйте еще раз.",
+        form_error_network: "Ошибка сети. Пожалуйста, попробуйте еще раз."
     },
     en: {
         toggle_nav: "Toggle navigation",
@@ -131,7 +134,10 @@ const translations = {
         modal_instruction_1: "The booking calendar will be displayed here.",
         modal_instruction_2: "<strong>Instructions:</strong> Sign up on <a href=\"https://calendly.com/\" target=\"_blank\">Calendly</a>, create an event, and paste the inline embed code here.",
         privacy_page_title: "Privacy Policy - Konsultant.Me",
-        privacy_title: "Privacy Policy"
+        privacy_title: "Privacy Policy",
+        form_success_message: "Thank you for your message! We will contact you shortly.",
+        form_error_generic: "Something went wrong. Please try again.",
+        form_error_network: "Network error. Please try again."
     },
     me: {
         toggle_nav: "Promijeni navigaciju",
@@ -195,6 +201,9 @@ const translations = {
         footer_copyright: "© 2025 Konsultant.Me. Sva prava zadržana.",
         footer_privacy: "Politika privatnosti",
         privacy_page_title: "Politika privatnosti - Konsultant.Me",
-        privacy_title: "Politika privatnosti"
+        privacy_title: "Politika privatnosti",
+        form_success_message: "Hvala vam na poruci! Uskoro ćemo vas kontaktirati.",
+        form_error_generic: "Nešto je pošlo naopako. Molimo pokušajte ponovo.",
+        form_error_network: "Mrežna greška. Molimo pokušajte ponovo."
     }
 };
