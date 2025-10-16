@@ -147,9 +147,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Contact Form Submission
     const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
+    const statusModal = document.getElementById('status-modal');
+    const statusModalMessage = document.getElementById('status-modal-message');
+    const statusModalOkBtn = document.getElementById('status-modal-ok-btn');
 
-    if (contactForm) {
+    if (contactForm && statusModal && statusModalMessage && statusModalOkBtn) {
+        const showStatusModal = (message, isError = false) => {
+            statusModalMessage.textContent = message;
+            statusModalMessage.style.color = isError ? '#ff6b6b' : 'var(--off-white)';
+            statusModal.style.display = 'flex';
+            setTimeout(() => {
+                statusModal.classList.add('visible');
+            }, 10);
+        };
+
+        const hideStatusModal = () => {
+            statusModal.classList.remove('visible');
+            setTimeout(() => {
+                statusModal.style.display = 'none';
+            }, 300);
+        };
+
+        statusModalOkBtn.addEventListener('click', hideStatusModal);
+        statusModal.addEventListener('click', (event) => {
+            if (event.target === statusModal) {
+                hideStatusModal();
+            }
+        });
+
         contactForm.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(contactForm);
@@ -162,25 +187,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }).then(response => {
                 if (response.ok) {
-                    formStatus.textContent = 'Спасибо за ваше сообщение! Мы скоро с вами свяжемся.';
-                    formStatus.style.color = 'var(--gold)';
+                    showStatusModal('Спасибо за ваше сообщение! Мы скоро с вами свяжемся.');
                     contactForm.reset();
-                    setTimeout(() => {
-                        formStatus.textContent = '';
-                    }, 5000);
                 } else {
                     response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            formStatus.textContent = 'Что-то пошло не так. Пожалуйста, попробуйте еще раз.';
-                        }
-                        formStatus.style.color = '#ff6b6b';
-                    })
+                        const errorMessage = data.errors ? data.errors.map(e => e.message).join(', ') : 'Что-то пошло не так. Пожалуйста, попробуйте еще раз.';
+                        showStatusModal(errorMessage, true);
+                    }).catch(() => {
+                        showStatusModal('Что-то пошло не так. Пожалуйста, проверьте ваше интернет-соединение.', true);
+                    });
                 }
             }).catch(error => {
-                formStatus.textContent = 'Что-то пошло не так. Пожалуйста, попробуйте еще раз.';
-                formStatus.style.color = '#ff6b6b';
+                showStatusModal('Ошибка сети. Пожалуйста, попробуйте еще раз.', true);
             });
         });
     }
