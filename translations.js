@@ -1,7 +1,7 @@
 const translations = {
     ru: {
         toggle_nav: "Переключить навигацию",
-        companyName: "Konsultant.Me",
+        companyName: "Konsultant.me",
         nav_about: "О нас",
         nav_why_us: "Почему мы",
         nav_services: "Услуги",
@@ -71,7 +71,7 @@ const translations = {
     },
     en: {
         toggle_nav: "Toggle navigation",
-        companyName: "Konsultant.Me",
+        companyName: "Konsultant.me",
         nav_about: "About Us",
         nav_why_us: "Why Us",
         nav_services: "Services",
@@ -141,7 +141,7 @@ const translations = {
     },
     me: {
         toggle_nav: "Promijeni navigaciju",
-        companyName: "Konsultant.Me",
+        companyName: "Konsultant.me",
         nav_about: "O nama",
         nav_why_us: "Zašto mi",
         nav_services: "Usluge",
